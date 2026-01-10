@@ -3,35 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BuyNest | Security Verification</title>
+    <title>Connect Zone | Verify Identity</title>
     <style>
-        :root { --primary: #b08d57; --dark: #1a202c; --light: #fdfbf7; }
-        body { font-family: sans-serif; background-color: var(--light); display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .verify-card { background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 25px rgba(0,0,0,0.1); width: 90%; max-width: 350px; text-align: center; border: 1px solid #eee; }
-        .logo { font-size: 2rem; font-weight: bold; color: var(--primary); text-decoration: none; margin-bottom: 20px; display: block; }
-        .otp-inputs { display: flex; justify-content: space-between; gap: 10px; margin: 20px 0; }
-        .otp-field { width: 45px; height: 50px; text-align: center; font-size: 1.2rem; border: 1px solid #e2e8f0; border-radius: 8px; background: #fff; outline: none; }
-        .otp-field:focus { border-color: var(--primary); }
-        .verify-btn { width: 100%; background: var(--dark); color: var(--primary); padding: 12px; border: none; border-radius: 8px; font-weight: bold; cursor: pointer; margin-top: 10px; }
+        :root { --primary: #c5a059; --dark: #121212; --bg: #f8f9fa; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
+        .verify-card { background: white; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); width: 100%; max-width: 350px; text-align: center; border: 1px solid #eee; }
+        .logo { font-size: 1.6rem; font-weight: 900; color: var(--dark); text-decoration: none; text-transform: uppercase; letter-spacing: -1px; }
+        .logo span { color: var(--primary); }
+        
+        h2 { font-size: 1.1rem; margin-top: 30px; margin-bottom: 10px; font-weight: 800; }
+        p { font-size: 0.8rem; color: #666; margin-bottom: 30px; }
+        
+        .pin-container { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; }
+        .pin-input { width: 45px; height: 55px; border: 1.5px solid #eee; border-radius: 0; text-align: center; font-size: 1.2rem; font-weight: 700; outline: none; }
+        .pin-input:focus { border-color: var(--primary); }
+        
+        .verify-btn { width: 100%; background: var(--dark); color: white; padding: 15px; border: none; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; }
+        .verify-btn:hover { background: var(--primary); }
     </style>
 </head>
 <body>
     <div class="verify-card">
-        <div class="logo">BuyNest</div>
-        <h3 style="color: var(--dark);">Verify Phone</h3>
-        <p style="font-size: 0.8rem; color: #718096;">Enter the 4-digit code sent to your device.</p>
+        <a href="index.html" class="logo">CONNECT<span>ZONE</span></a>
+        <h2>Verify Identity</h2>
+        <p>Enter the 4-digit secure pin provided for your account access.</p>
         
-        <form onsubmit="alert('Device Verified Successfully'); window.location.href='checkout.html'; return false;">
-            <div class="otp-inputs">
-                <input type="text" class="otp-field" maxlength="1" required>
-                <input type="text" class="otp-field" maxlength="1" required>
-                <input type="text" class="otp-field" maxlength="1" required>
-                <input type="text" class="otp-field" maxlength="1" required>
+        <form onsubmit="window.location.href='index.html'; return false;">
+            <div class="pin-container">
+                <input type="text" maxlength="1" class="pin-input" required>
+                <input type="text" maxlength="1" class="pin-input" required>
+                <input type="text" maxlength="1" class="pin-input" required>
+                <input type="text" maxlength="1" class="pin-input" required>
             </div>
-            <button type="submit" class="verify-btn">Verify & Continue</button>
+            <button type="submit" class="verify-btn">Verify & Connect</button>
         </form>
-        
-        <p style="font-size: 0.75rem; color: #a0aec0; margin-top: 20px;">Didn't receive code? <span style="color: var(--primary); font-weight: bold; cursor: pointer;">Resend</span></p>
     </div>
 </body>
 </html>
