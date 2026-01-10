@@ -1,11 +1,114 @@
 <style>
+<style>
     :root { 
-        --primary: #c5a059;    /* Refined Luxury Gold */
-        --dark: #1a1a1b;       /* Soft Black */
-        --bg: #f8f9fa;         /* Professional Soft Grey Background */
-        --card: #ffffff;       /* Pure White for Product Cards */
-        --text-muted: #6c757d; /* Elegant Muted Grey */
+        --primary: #c5a059;    /* Luxury Gold */
+        --dark: #1a1a1b;       /* Deep Charcoal */
+        --bg: #f4f7f6;         /* Soft Professional Grey */
+        --card: #ffffff;       /* Pure White */
+        --text-muted: #718096; /* Subtle Slate */
     }
+
+    body { 
+        font-family: 'Inter', -apple-system, sans-serif; 
+        margin: 0; 
+        background-color: var(--bg); 
+        color: var(--dark); 
+    }
+
+    /* Elegant Header */
+    header { 
+        background: var(--card); 
+        padding: 30px 20px; 
+        border-bottom: 1px solid #e2e8f0;
+        text-align: center;
+    }
+
+    .logo { 
+        font-size: 1.8rem; 
+        font-weight: 800; 
+        color: var(--dark); 
+        text-decoration: none; 
+        letter-spacing: -0.5px;
+    }
+
+    .logo span { color: var(--primary); }
+
+    .slogan { 
+        font-size: 0.7rem; 
+        color: var(--text-muted); 
+        text-transform: uppercase; 
+        letter-spacing: 2px; 
+        margin-top: 8px;
+        font-weight: 600;
+    }
+
+    /* Sticky Modern Navigation */
+    .nav-categories { 
+        background: rgba(255, 255, 255, 0.9); 
+        backdrop-filter: blur(10px);
+        padding: 12px 0; 
+        position: sticky; 
+        top: 0; 
+        z-index: 100;
+        border-bottom: 1px solid #e2e8f0;
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+    }
+
+    .nav-item { 
+        font-size: 0.75rem; 
+        font-weight: 700; 
+        color: var(--text-muted); 
+        text-decoration: none;
+        text-transform: uppercase;
+    }
+
+    .nav-item.active { color: var(--dark); border-bottom: 2px solid var(--primary); }
+
+    /* High-End Product Grid */
+    .product-grid { 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px; 
+        padding: 20px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .product-card { 
+        background: var(--card); 
+        border-radius: 20px; 
+        overflow: hidden; 
+        box-shadow: 0 10px 30px rgba(0,0,0,0.03); 
+        border: 1px solid rgba(0,0,0,0.02);
+    }
+
+    .product-info { padding: 15px; text-align: left; }
+
+    .product-name { font-size: 0.9rem; font-weight: 600; color: var(--dark); }
+
+    .product-price { 
+        font-size: 1rem; 
+        font-weight: 800; 
+        color: var(--primary); 
+        margin: 5px 0 12px 0;
+    }
+
+    .buy-now { 
+        display: block; 
+        background: var(--dark); 
+        color: #fff; 
+        text-align: center; 
+        padding: 12px; 
+        border-radius: 10px; 
+        text-decoration: none; 
+        font-size: 0.8rem; 
+        font-weight: 700;
+        transition: 0.3s;
+    }
+</style>
+
 
     body { 
         font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
