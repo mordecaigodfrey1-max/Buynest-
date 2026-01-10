@@ -138,7 +138,145 @@
             font-size: 0.8rem; 
             font-weight: 600;
         }
-    </style>
+ <style>
+    :root { 
+        --primary: #c5a059;    /* Deep Champagne Gold */
+        --dark: #121212;       /* Rich Obsidian */
+        --bg: #fdfdfd;         /* Clean Gallery White */
+        --card-bg: #ffffff;    /* Pure White */
+        --shadow: rgba(0, 0, 0, 0.06);
+    }
+
+    body { 
+        font-family: 'Futura', 'Trebuchet MS', Arial, sans-serif; 
+        margin: 0; 
+        background-color: var(--bg); 
+        color: var(--dark); 
+        -webkit-font-smoothing: antialiased;
+    }
+
+    /* Ultra-Slim Header */
+    header { 
+        background: var(--card-bg); 
+        padding: 40px 20px 20px; 
+        text-align: center;
+    }
+
+    .logo { 
+        font-size: 2.2rem; 
+        font-weight: 900; 
+        color: var(--dark); 
+        text-decoration: none; 
+        letter-spacing: -2px;
+        text-transform: uppercase;
+    }
+
+    .logo span { color: var(--primary); font-weight: 300; }
+
+    .slogan { 
+        font-size: 0.6rem; 
+        color: #999; 
+        text-transform: uppercase; 
+        letter-spacing: 4px; 
+        margin-top: 10px;
+    }
+
+    /* Glassmorphic Navigation */
+    .nav-categories { 
+        background: rgba(255, 255, 255, 0.8);
+        backdrop-filter: blur(15px);
+        padding: 15px 0; 
+        position: sticky; 
+        top: 0; 
+        z-index: 1000;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+
+    .nav-item { 
+        font-size: 0.7rem; 
+        font-weight: 600; 
+        color: #888; 
+        text-decoration: none;
+        letter-spacing: 1px;
+        transition: 0.3s ease;
+    }
+
+    .nav-item:hover, .nav-item.active { 
+        color: var(--dark);
+    }
+
+    /* Stylish Product Grid */
+    .product-grid { 
+        display: grid; 
+        grid-template-columns: 1fr 1fr; 
+        gap: 25px; 
+        padding: 30px 20px;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .product-card { 
+        background: var(--card-bg); 
+        border-radius: 0px; /* Sharp corners look more "Architectural" */
+        overflow: hidden; 
+        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    }
+
+    .product-card:hover {
+        transform: translateY(-8px);
+    }
+
+    .product-card img { 
+        width: 100%; 
+        height: 180px; 
+        object-fit: cover; 
+        filter: grayscale(20%); /* Artistic touch */
+        transition: 0.5s ease;
+    }
+
+    .product-card:hover img {
+        filter: grayscale(0%);
+        transform: scale(1.05);
+    }
+
+    .product-info { padding: 15px 5px; text-align: left; }
+
+    .product-name { 
+        font-size: 0.8rem; 
+        font-weight: 700; 
+        text-transform: uppercase;
+        margin: 0; 
+    }
+
+    .product-price { 
+        font-size: 0.9rem; 
+        color: var(--primary); 
+        margin: 5px 0 15px 0;
+        font-weight: 400;
+    }
+
+    .buy-now { 
+        display: inline-block; 
+        border: 1.5px solid var(--dark);
+        color: var(--dark); 
+        text-align: center; 
+        padding: 10px 20px; 
+        text-decoration: none; 
+        font-size: 0.7rem; 
+        font-weight: 800;
+        text-transform: uppercase;
+        transition: 0.3s;
+    }
+
+    .buy-now:hover {
+        background: var(--dark);
+        color: white;
+    }
+</style>
+</style>
 </head>
 <body>
 
