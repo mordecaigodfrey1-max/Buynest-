@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Zone | Secure Checkout</title>
+    <style>
+        :root { --primary: #c5a059; --dark: #121212; --bg: #f8f9fa; }
+        body { font-family: 'Segoe UI', sans-serif; background: var(--bg); margin: 0; padding: 20px; color: var(--dark); }
+        .checkout-card { max-width: 400px; margin: 40px auto; background: white; padding: 30px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .logo { font-size: 1.5rem; font-weight: 900; text-decoration: none; color: var(--dark); text-transform: uppercase; letter-spacing: -1px; }
+        .logo span { color: var(--primary); }
+        
+        .instruction { font-size: 0.85rem; color: #666; margin-bottom: 25px; line-height: 1.5; text-align: center; }
+        
+        .bank-details { background: #fafafa; border: 1px dashed var(--primary); padding: 20px; margin-bottom: 25px; }
+        .label { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; color: var(--primary); letter-spacing: 1px; margin-bottom: 5px; }
+        .value { font-size: 1.1rem; font-weight: 700; margin-bottom: 15px; }
+        
+        .btn-confirm { display: block; width: 100%; background: var(--dark); color: white; text-align: center; padding: 16px; text-decoration: none; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; border: none; cursor: pointer; transition: 0.3s; }
+        .btn-confirm:hover { background: var(--primary); }
+        
+        .wa-link { display: block; text-align: center; margin-top: 20px; font-size: 0.75rem; color: #25d366; text-decoration: none; font-weight: 700; }
+    </style>
+</head>
+<body>
+
+<div class="checkout-card">
+    <div class="header">
+        <a href="index.html" class="logo">CONNECT<span>ZONE</span></a>
+        <p style="font-size: 0.6rem; letter-spacing: 2px; color: #999; margin-top: 5px;">PAYMENT TERMINAL</p>
+    </div>
+
+    <div class="instruction">
+        Complete your order by making a transfer to the secure account below.
+    </div>
+
+    <div class="bank-details">
+        <div class="label">Bank Name</div>
+        <div class="value">YOUR BANK NAME</div>
+
+        <div class="label">Account Number</div>
+        <div class="value">1234567890</div>
+
+        <div class="label">Account Name</div>
+        <div class="value">CONNECT ZONE / YOUR NAME</div>
+    </div>
+
+    <form action="https://formspree.io/f/YOUR_FORMSPREE_ID" method="POST" enctype="multipart/form-data">
+        <label style="font-size: 0.7rem; font-weight: bold; display: block; margin-bottom: 10px;">UPLOAD PROOF OF PAYMENT</label>
+        <input type="file" name="receipt" accept="image/*" style="margin-bottom: 20px; font-size: 0.8rem;" required>
+        
+        <button type="submit" class="btn-confirm">Submit Payment Proof</button>
+    </form>
+
+    <a href="https://wa.me/YOUR_PHONE_NUMBER" class="wa-link">
+        Chat with Concierge on WhatsApp
+    </a>
+</div>
+
+</body>
+</html>
