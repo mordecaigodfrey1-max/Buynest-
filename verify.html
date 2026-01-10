@@ -4,118 +4,130 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Connect Zone | Secure Verification</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { 
-            --primary: #c5a059;    /* Gold accent */
-            --dark: #121212;       /* Rich Black */
-            --bg: #f8f9fa;         /* Light Gray background */
+            --accent: #c5a059; 
+            --charcoal: #1a1a1a; 
+            --soft-bg: #ffffff; 
         }
 
         body { 
-            font-family: 'Inter', -apple-system, sans-serif; 
-            background: var(--bg); 
+            font-family: 'Inter', sans-serif; 
+            background-color: #fcfcfc; 
             display: flex; 
             align-items: center; 
             justify-content: center; 
             height: 100vh; 
             margin: 0; 
+            color: var(--charcoal);
         }
 
-        .verify-card { 
+        .premium-card { 
             background: white; 
-            padding: 40px; 
-            box-shadow: 0 10px 30px rgba(0,0,0,0.05); 
+            padding: 60px 40px; 
             width: 100%; 
-            max-width: 350px; 
+            max-width: 400px; 
             text-align: center; 
-            border: 1px solid #eee; 
+            border: 1px solid #f0f0f0;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.03);
         }
 
-        .logo { 
-            font-size: 1.6rem; 
-            font-weight: 900; 
-            color: var(--dark); 
-            text-decoration: none; 
-            text-transform: uppercase; 
-            letter-spacing: -1px; 
+        .brand-header { 
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem; 
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-bottom: 40px;
+            color: var(--charcoal);
+            text-decoration: none;
+            display: block;
         }
 
-        .logo span { color: var(--primary); }
+        .brand-header span { color: var(--accent); }
         
         h2 { 
-            font-size: 1.1rem; 
-            margin-top: 30px; 
-            margin-bottom: 10px; 
-            font-weight: 800; 
+            font-size: 0.9rem; 
+            font-weight: 600; 
             text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 15px;
+            color: #888;
         }
 
         p { 
-            font-size: 0.8rem; 
-            color: #666; 
-            margin-bottom: 30px; 
-            line-height: 1.5;
+            font-size: 0.85rem; 
+            color: #999; 
+            margin-bottom: 40px; 
+            line-height: 1.6;
+            font-weight: 300;
         }
         
-        /* Single-field container for Auto-fill support */
-        .pin-container { 
-            display: flex; 
-            justify-content: center; 
-            margin-bottom: 30px; 
+        .otp-wrapper { 
+            margin-bottom: 40px; 
         }
 
-        .pin-input { 
-            width: 200px; 
-            height: 55px; 
-            border: 1.5px solid #eee; 
+        .premium-input { 
+            width: 100%; 
+            max-width: 240px;
+            height: 50px; 
+            border: none;
+            border-bottom: 2px solid #eee;
             text-align: center; 
-            font-size: 1.5rem; 
-            font-weight: 700; 
+            font-size: 1.8rem; 
+            font-weight: 400; 
             outline: none; 
             letter-spacing: 15px;
-            padding-left: 15px;
-            transition: 0.3s;
+            transition: all 0.4s ease;
+            background: transparent;
         }
 
-        .pin-input:focus { border-color: var(--primary); }
+        .premium-input:focus { 
+            border-bottom-color: var(--accent); 
+        }
         
-        .verify-btn { 
+        .action-btn { 
             width: 100%; 
-            background: var(--dark); 
+            background: var(--charcoal); 
             color: white; 
-            padding: 16px; 
+            padding: 18px; 
             border: none; 
-            font-weight: 800; 
+            font-weight: 600; 
             text-transform: uppercase; 
-            letter-spacing: 1px; 
+            letter-spacing: 2px; 
             cursor: pointer; 
             transition: 0.3s;
-        }
-
-        .verify-btn:hover { background: var(--primary); }
-
-        .resend-text {
             font-size: 0.75rem;
-            color: #999;
-            margin-top: 20px;
         }
 
-        .resend-link {
-            color: var(--primary);
+        .action-btn:hover { 
+            background: var(--accent);
+            transform: translateY(-2px);
+        }
+
+        .footer-link {
+            font-size: 0.7rem;
+            color: #bbb;
+            margin-top: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .footer-link a {
+            color: var(--accent);
             text-decoration: none;
-            font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <div class="verify-card">
-        <a href="index.html" class="logo">CONNECT<span>ZONE</span></a>
+    <div class="premium-card">
+        <a href="index.html" class="brand-header">CONNECT<span>ZONE</span></a>
         
-        <h2>Verify Identity</h2>
-        <p>Enter the 4-digit secure pin sent to your device to access your account.</p>
+        <h2>Identity Access</h2>
+        <p>A 4-digit security code has been dispatched to your registered device. Please authorize entry below.</p>
         
         <form onsubmit="window.location.href='index.html'; return false;">
-            <div class="pin-container">
+            <div class="otp-wrapper">
                 <input type="text" 
                        id="otp-input"
                        inputmode="numeric" 
@@ -123,34 +135,30 @@
                        pattern="\d{4}" 
                        placeholder="0000"
                        maxlength="4"
-                       class="pin-input" 
+                       class="premium-input" 
                        required>
             </div>
-            <button type="submit" class="verify-btn">Verify & Connect</button>
+            <button type="submit" class="action-btn">Authorize Entry</button>
         </form>
 
-        <div class="resend-text">
-            Didn't receive the code? <a href="#" class="resend-link">Resend</a>
+        <div class="footer-link">
+            Requesting new code in <span id="timer">59</span>s
         </div>
     </div>
 
     <script>
-        /* Optional: Logic to handle the WebOTP API for auto-fill */
+        // Auto-fill Logic
         if ('OTPCredential' in window) {
             window.addEventListener('DOMContentLoaded', e => {
-                const input = document.querySelector('input[autocomplete="one-time-code"]');
-                if (!input) return;
+                const input = document.querySelector('#otp-input');
                 const ac = new AbortController();
                 navigator.credentials.get({
                     otp: { transport:['sms'] },
                     signal: ac.signal
                 }).then(otp => {
                     input.value = otp.code;
-                    // Auto-submit the form once code is filled
                     input.closest('form').submit();
-                }).catch(err => {
-                    console.log(err);
-                });
+                }).catch(err => console.log(err));
             });
         }
     </script>
