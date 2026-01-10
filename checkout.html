@@ -1,11 +1,64 @@
-<div class="bank-details">
-    <div class="label">Bank Name</div>
-    <div class="value">MONIE POINT</div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect Zone | Secure Payment</title>
+    <style>
+        :root { --primary: #c5a059; --dark: #121212; --bg: #f8f9fa; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; padding: 20px; color: var(--dark); }
+        .checkout-container { max-width: 400px; margin: 40px auto; background: white; padding: 30px; border-radius: 0px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee; }
+        .header { text-align: center; margin-bottom: 30px; }
+        .logo { font-size: 1.5rem; font-weight: 900; text-decoration: none; color: var(--dark); text-transform: uppercase; }
+        .logo span { color: var(--primary); }
+        
+        .instruction { font-size: 0.85rem; color: #666; margin-bottom: 25px; line-height: 1.5; text-align: center; }
+        
+        /* The Corrected Bank Box */
+        .payment-box { background: #fdfdfd; border: 1px dashed var(--primary); padding: 20px; margin-bottom: 25px; }
+        .label { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; color: var(--primary); letter-spacing: 1px; margin-bottom: 5px; }
+        .detail { font-size: 1.1rem; font-weight: 700; margin-bottom: 15px; color: var(--dark); }
+        
+        .confirm-btn { display: block; width: 100%; background: var(--dark); color: white; text-align: center; padding: 16px; text-decoration: none; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s; border: none; cursor: pointer; }
+        .confirm-btn:hover { background: var(--primary); }
+        
+        .whatsapp-verify { display: block; text-align: center; margin-top: 20px; font-size: 0.75rem; color: #25d366; text-decoration: none; font-weight: 700; }
+    </style>
+</head>
+<body>
 
-    <div class="label">Account Details</div>
-    <div class="value">6555672009</div>
+<div class="checkout-container">
+    <div class="header">
+        <a href="index.html" class="logo">CONNECT<span>ZONE</span></a>
+        <p style="font-size: 0.7rem; letter-spacing: 2px; color: #999;">PAYMENT TERMINAL</p>
+    </div>
 
-    <div class="label">Account Name</div>
-    <div class="value">BOMA SUNNY</div>
+    <div class="instruction">
+        Please make your payment to the account below before submitting your order proof.
+    </div>
+
+    <div class="payment-box">
+        <div class="label">Bank Name</div>
+        <div class="detail">MONIE POINT</div>
+
+        <div class="label">Account Details</div>
+        <div class="detail">6555672009</div>
+
+        <div class="label">Account Name</div>
+        <div class="detail">BOMA SUNNY</div>
+    </div>
+
+    <form action="https://formspree.io/f/YOUR_ID" method="POST" enctype="multipart/form-data">
+        <p style="font-size: 0.7rem; font-weight: bold; margin-bottom: 10px; text-transform: uppercase;">Upload Transfer Receipt</p>
+        <input type="file" name="receipt" accept="image/*" style="font-size: 0.7rem; margin-bottom: 20px;" required>
+        
+        <button type="submit" class="confirm-btn">Submit Payment Proof</button>
+    </form>
+
+    <a href="https://wa.me/234XXXXXXXXXX" class="whatsapp-verify">
+        Confirm Payment via WhatsApp
+    </a>
 </div>
 
+</body>
+</html>
