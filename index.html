@@ -3,383 +3,92 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect Zone | One zone. Endless connections</title>
+    <title>Connect Zone | Curated Premium Design</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root { 
-            --primary: #c5a059;    /* Refined Luxury Gold */
-            --dark: #1a1a1b;       /* Soft Black */
-            --bg: #f8f9fa;         /* Professional Light Grey */
-            --card: #ffffff;       /* Pure White */
-            --text-muted: #6c757d; /* Elegant Muted Grey */
-        }
+        :root { --accent: #c5a059; --dark: #121212; --light: #fcfcfc; }
+        body { font-family: 'Inter', sans-serif; background: var(--light); margin: 0; color: var(--dark); }
+        
+        /* Navigation */
+        nav { padding: 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; background: white; position: sticky; top: 0; z-index: 100; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; color: var(--dark); }
+        .logo span { color: var(--accent); }
+        
+        /* Hero Section */
+        .hero { text-align: center; padding: 60px 20px; border-bottom: 1px solid #eee; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
+        .hero p { color: #888; letter-spacing: 3px; text-transform: uppercase; font-size: 0.7rem; }
 
-        body { 
-            font-family: 'Segoe UI', Roboto, Arial, sans-serif; 
-            margin: 0; 
-            background-color: var(--bg); 
-            color: var(--dark); 
-            line-height: 1.6;
-            text-align: center;
-        }
+        /* Product Grid */
+        .collection-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; padding: 60px 10%; }
+        .product-card { background: white; transition: 0.4s ease; position: relative; }
+        .product-card:hover { transform: translateY(-10px); }
+        .img-holder { width: 100%; aspect-ratio: 1/1; background: #f0f0f0; overflow: hidden; }
+        .img-holder img { width: 100%; height: 100%; object-fit: cover; }
+        
+        .product-info { padding: 20px 0; text-align: center; }
+        .product-info h3 { font-family: 'Playfair Display', serif; margin: 0 0 10px 0; font-size: 1.2rem; }
+        .price { color: var(--accent); font-weight: 600; font-size: 1rem; margin-bottom: 20px; display: block; }
+        
+        .order-btn { display: inline-block; padding: 12px 30px; background: var(--dark); color: white; text-decoration: none; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
+        .order-btn:hover { background: var(--accent); }
 
-        /* Clean Header */
-        header { 
-            background: var(--card); 
-            padding: 25px 0; 
-            border-bottom: 1px solid #e9ecef;
-        }
-
-        .logo { 
-            font-size: 1.8rem; 
-            font-weight: 800; 
-            color: var(--dark); 
-            text-decoration: none; 
-            letter-spacing: -1px;
-            display: block;
-        }
-
-        .logo span { color: var(--primary); }
-
-        .slogan { 
-            font-size: 0.65rem; 
-            color: var(--text-muted); 
-            text-transform: uppercase; 
-            letter-spacing: 2px; 
-            font-weight: 600;
-        }
-
-        /* Hero Video Section */
-        .hero-container {
-            width: 100%;
-            height: 250px;
-            overflow: hidden;
-            position: relative;
-            background: #000;
-        }
-
-        .hero-video {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            opacity: 0.7;
-        }
-
-        .hero-text {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            color: white;
-            width: 90%;
-        }
-
-        /* Presentable Navigation */
-        .nav-categories { 
-            background: var(--card); 
-            padding: 12px 0; 
-            position: sticky; 
-            top: 0; 
-            z-index: 100;
-            border-bottom: 1px solid #e9ecef;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .nav-item { 
-            font-size: 0.75rem; 
-            font-weight: 700; 
-            color: var(--text-muted); 
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .nav-item.active { color: var(--primary); }
-
-        /* Modern Grid */
-        .product-grid { 
-            display: grid; 
-            grid-template-columns: 1fr 1fr; 
-            gap: 16px; 
-            padding: 20px;
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .product-card { 
-            background: var(--card); 
-            border-radius: 16px; 
-            overflow: hidden; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
-            border: 1px solid #f1f3f5;
-        }
-
-        .product-card img { width: 100%; height: 150px; object-fit: cover; }
-
-        .product-info { padding: 15px; text-align: left; }
-
-        .product-name { font-size: 0.85rem; font-weight: 700; margin: 0; }
-
-        .product-price { 
-            font-size: 1rem; 
-            font-weight: 800; 
-            color: var(--primary); 
-            margin: 5px 0 10px 0;
-        }
-
-        .buy-now { 
-            display: block; 
-            background: var(--dark); 
-            color: #fff; 
-            text-align: center; 
-            padding: 10px; 
-            border-radius: 8px; 
-            text-decoration: none; 
-            font-size: 0.8rem; 
-            font-weight: 600;
-        }
- <style>
-    :root { 
-        --primary: #c5a059;    /* Deep Champagne Gold */
-        --dark: #121212;       /* Rich Obsidian */
-        --bg: #fdfdfd;         /* Clean Gallery White */
-        --card-bg: #ffffff;    /* Pure White */
-        --shadow: rgba(0, 0, 0, 0.06);
-    }
-
-    body { 
-        font-family: 'Futura', 'Trebuchet MS', Arial, sans-serif; 
-        margin: 0; 
-        background-color: var(--bg); 
-        color: var(--dark); 
-        -webkit-font-smoothing: antialiased;
-    }
-
-    /* Ultra-Slim Header */
-    header { 
-        background: var(--card-bg); 
-        padding: 40px 20px 20px; 
-        text-align: center;
-    }
-
-    .logo { 
-        font-size: 2.2rem; 
-        font-weight: 900; 
-        color: var(--dark); 
-        text-decoration: none; 
-        letter-spacing: -2px;
-        text-transform: uppercase;
-    }
-
-    .logo span { color: var(--primary); font-weight: 300; }
-
-    .slogan { 
-        font-size: 0.6rem; 
-        color: #999; 
-        text-transform: uppercase; 
-        letter-spacing: 4px; 
-        margin-top: 10px;
-    }
-
-    /* Glassmorphic Navigation */
-    .nav-categories { 
-        background: rgba(255, 255, 255, 0.8);
-        backdrop-filter: blur(15px);
-        padding: 15px 0; 
-        position: sticky; 
-        top: 0; 
-        z-index: 1000;
-        border-bottom: 1px solid rgba(0,0,0,0.05);
-        display: flex;
-        justify-content: center;
-        gap: 30px;
-    }
-
-    .nav-item { 
-        font-size: 0.7rem; 
-        font-weight: 600; 
-        color: #888; 
-        text-decoration: none;
-        letter-spacing: 1px;
-        transition: 0.3s ease;
-    }
-
-    .nav-item:hover, .nav-item.active { 
-        color: var(--dark);
-    }
-
-    /* Stylish Product Grid */
-    .product-grid { 
-        display: grid; 
-        grid-template-columns: 1fr 1fr; 
-        gap: 25px; 
-        padding: 30px 20px;
-        max-width: 800px;
-        margin: 0 auto;
-    }
-
-    .product-card { 
-        background: var(--card-bg); 
-        border-radius: 0px; /* Sharp corners look more "Architectural" */
-        overflow: hidden; 
-        transition: transform 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-    }
-
-    .product-card:hover {
-        transform: translateY(-8px);
-    }
-
-    .product-card img { 
-        width: 100%; 
-        height: 180px; 
-        object-fit: cover; 
-        filter: grayscale(20%); /* Artistic touch */
-        transition: 0.5s ease;
-    }
-
-    .product-card:hover img {
-        filter: grayscale(0%);
-        transform: scale(1.05);
-    }
-
-    .product-info { padding: 15px 5px; text-align: left; }
-
-    .product-name { 
-        font-size: 0.8rem; 
-        font-weight: 700; 
-        text-transform: uppercase;
-        margin: 0; 
-    }
-
-    .product-price { 
-        font-size: 0.9rem; 
-        color: var(--primary); 
-        margin: 5px 0 15px 0;
-        font-weight: 400;
-    }
-
-    .buy-now { 
-        display: inline-block; 
-        border: 1.5px solid var(--dark);
-        color: var(--dark); 
-        text-align: center; 
-        padding: 10px 20px; 
-        text-decoration: none; 
-        font-size: 0.7rem; 
-        font-weight: 800;
-        text-transform: uppercase;
-        transition: 0.3s;
-    }
-
-    .buy-now:hover {
-        background: var(--dark);
-        color: white;
-    }
-</style>
-</style>
+        footer { text-align: center; padding: 40px; border-top: 1px solid #eee; font-size: 0.7rem; color: #aaa; letter-spacing: 1px; }
+    </style>
 </head>
 <body>
 
-    <header>
-        <a href="index.html" class="logo">CONNECT<span>ZONE</span></a>
-        <div class="slogan">One zone. Endless connections</div>
-    </header>
+<nav>
+    <a href="#" class="logo">CONNECT<span>ZONE</span></a>
+    <div style="font-size: 0.8rem; font-weight: 600; letter-spacing: 1px;">COLLECTIONS</div>
+</nav>
 
-    <div class="hero-container">
-        <video autoplay muted loop playsinline class="hero-video">
-            <source src="https://assets.mixkit.co/videos/preview/mixkit-luxury-interior-of-a-modern-apartment-41223-large.mp4" type="video/mp4">
-        </video>
-        <div class="hero-text">
-            <h2 style="margin: 0; font-size: 1.4rem;">Elevate Your Space</h2>
-            <p style="font-size: 0.8rem; opacity: 0.9;">Curated Connections to Premium Design</p>
+<div class="hero">
+    <p>Premium Accessories</p>
+    <h1>The Living Collection</h1>
+</div>
+
+<div class="collection-grid">
+    <div class="product-card">
+        <div class="img-holder"><img src="https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?auto=format&fit=crop&q=80&w=500" alt="Sofa"></div>
+        <div class="product-info">
+            <h3>Emerald Velvet Sofa</h3>
+            <span class="price">₦1,350,000</span>
+            <a href="checkout.html" class="order-btn">Initiate Order</a>
         </div>
     </div>
 
-    <nav class="nav-categories">
-        <a href="#" class="nav-item active">All</a>
-        <a href="#" class="nav-item">Living</a>
-        <a href="#" class="nav-item">Bedroom</a>
-        <a href="#" class="nav-item">Office</a>
-    </nav>
-
-    <div class="product-grid">
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=400">
-            <div class="product-info">
-                <p class="product-name">Emerald Velvet Sofa</p>
-                <p class="product-price">$850.00</p>
-                <a href="login.html" class="buy-now">Order Now</a>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <img src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?w=400">
-            <div class="product-info">
-                <p class="product-name">Minimalist Chair</p>
-                <p class="product-price">$120.00</p>
-                <a href="login.html" class="buy-now">Order Now</a>
-            </div>
+    <div class="product-card">
+        <div class="img-holder"><img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&q=80&w=500" alt="Chair"></div>
+        <div class="product-info">
+            <h3>Minimalist Nordic Chair</h3>
+            <span class="price">₦210,000</span>
+            <a href="checkout.html" class="order-btn">Initiate Order</a>
         </div>
     </div>
 
-    <footer style="padding: 40px 0; color: var(--text-muted); font-size: 0.7rem;">
-        <p>© Connect Zone Inc. | One zone. Endless connections</p>
-    </footer>
+    <div class="product-card">
+        <div class="img-holder"><img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=500" alt="Table"></div>
+        <div class="product-info">
+            <h3>Marble Coffee Table</h3>
+            <span class="price">₦450,000</span>
+            <a href="checkout.html" class="order-btn">Initiate Order</a>
+        </div>
+    </div>
+
+    <div class="product-card">
+        <div class="img-holder"><img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&q=80&w=500" alt="Lamp"></div>
+        <div class="product-info">
+            <h3>Architectural Floor Lamp</h3>
+            <span class="price">₦125,000</span>
+            <a href="checkout.html" class="order-btn">Initiate Order</a>
+        </div>
+    </div>
+</div>
+
+<footer>
+    &copy; CONNECT ZONE INC. | ONE ZONE. ENDLESS CONNECTIONS.
+</footer>
 
 </body>
 </html>
-<a href="https://wa.me/+2349160835804?text=Hi%20Connect%20Zone,%20I%20have%20a%20question%20about%20my%20order." 
-   style="position: fixed; bottom: 25px; right: 25px; background: #25d366; color: white; padding: 15px 22px; border-radius: 50px; text-decoration: none; font-weight: bold; box-shadow: 0 10px 25px rgba(0,0,0,0.1); z-index: 1000; display: flex; align-items: center; gap: 10px; font-size: 0.9rem;"
-   target="_blank">
-   <svg width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
-      <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4
- <style>
-    .wa-float {
-        position: fixed;
-        bottom: 30px;
-        right: 30px;
-        width: 55px;
-        height: 55px;
-        background-color: #25d366;
-        color: #fff;
-        border-radius: 50px;
-        text-align: center;
-        font-size: 30px;
-        box-shadow: 0 4px 15px rgba(0,0,0,0.15);
-        z-index: 1000;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .wa-float:hover {
-        transform: scale(1.1);
-        box-shadow: 0 6px 20px rgba(0,0,0,0.25);
-    }
-
-    /* Pulse effect to draw attention subtly */
-    .wa-float::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        border-radius: 50%;
-        border: 2px solid #25d366;
-        animation: pulse 2s infinite;
-        opacity: 0;
-    }
-
-    @keyframes pulse {
-        0% { transform: scale(1); opacity: 0.5; }
-        100% { transform: scale(1.5); opacity: 0; }
-    }
-</style>
-
-<a href="https://wa.me/YOUR_PHONE_NUMBER?text=Hello%20Connect%20Zone,%20I'm%20interested%20in%20your%20collection." class="wa-float" target="_blank">
-    <svg width="28" height="28" fill="currentColor" viewBox="0 0 16 16">
-        <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.601 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"/>
-    </svg>
-      </a>
-          
