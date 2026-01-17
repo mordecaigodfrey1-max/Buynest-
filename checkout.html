@@ -3,62 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect Zone | Secure Payment</title>
+    <title>Connect Zone | Payment Terminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #c5a059; --dark: #121212; --bg: #f8f9fa; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; padding: 20px; color: var(--dark); }
-        .checkout-container { max-width: 400px; margin: 40px auto; background: white; padding: 30px; border-radius: 0px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); border: 1px solid #eee; }
-        .header { text-align: center; margin-bottom: 30px; }
-        .logo { font-size: 1.5rem; font-weight: 900; text-decoration: none; color: var(--dark); text-transform: uppercase; }
-        .logo span { color: var(--primary); }
-        
-        .instruction { font-size: 0.85rem; color: #666; margin-bottom: 25px; line-height: 1.5; text-align: center; }
-        
-        /* The Corrected Bank Box */
-        .payment-box { background: #fdfdfd; border: 1px dashed var(--primary); padding: 20px; margin-bottom: 25px; }
-        .label { font-size: 0.65rem; font-weight: 800; text-transform: uppercase; color: var(--primary); letter-spacing: 1px; margin-bottom: 5px; }
-        .detail { font-size: 1.1rem; font-weight: 700; margin-bottom: 15px; color: var(--dark); }
-        
-        .confirm-btn { display: block; width: 100%; background: var(--dark); color: white; text-align: center; padding: 16px; text-decoration: none; font-weight: 800; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; transition: 0.3s; border: none; cursor: pointer; }
-        .confirm-btn:hover { background: var(--primary); }
-        
-        .whatsapp-verify { display: block; text-align: center; margin-top: 20px; font-size: 0.75rem; color: #25d366; text-decoration: none; font-weight: 700; }
+        :root { --accent: #c5a059; --dark: #121212; --light: #fcfcfc; }
+        body { font-family: 'Inter', sans-serif; background: var(--light); margin: 0; padding: 20px; color: var(--dark); }
+        .terminal-card { max-width: 450px; margin: 60px auto; background: white; padding: 50px 40px; border: 1px solid #f0f0f0; box-shadow: 0 30px 60px rgba(0,0,0,0.02); }
+        .brand { font-family: 'Playfair Display', serif; font-size: 1.8rem; text-align: center; display: block; text-decoration: none; color: var(--dark); letter-spacing: 2px; text-transform: uppercase; }
+        .brand span { color: var(--accent); }
+        .subtitle { text-align: center; font-size: 0.65rem; letter-spacing: 4px; color: #aaa; margin: 10px 0 40px 0; text-transform: uppercase; }
+        .bank-details { border-top: 1px solid #eee; border-bottom: 1px solid #eee; padding: 30px 0; margin-bottom: 35px; }
+        .row { margin-bottom: 20px; text-align: center; }
+        .label { font-size: 0.6rem; font-weight: 600; text-transform: uppercase; color: var(--accent); letter-spacing: 2px; margin-bottom: 8px; }
+        .value { font-size: 1.1rem; color: var(--dark); }
+        .btn-confirm { width: 100%; background: var(--dark); color: white; padding: 20px; border: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; font-size: 0.75rem; transition: 0.3s; }
+        .btn-confirm:hover { background: var(--accent); transform: translateY(-2px); }
+        .wa-link { display: block; text-align: center; margin-top: 25px; font-size: 0.7rem; color: #25d366; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
     </style>
 </head>
 <body>
-
-<div class="checkout-container">
-    <div class="header">
-        <a href="index.html" class="logo">CONNECT<span>ZONE</span></a>
-        <p style="font-size: 0.7rem; letter-spacing: 2px; color: #999;">PAYMENT TERMINAL</p>
+    <div class="terminal-card">
+        <a href="index.html" class="brand">CONNECT<span>ZONE</span></a>
+        <div class="subtitle">Payment Terminal</div>
+        <div class="bank-details">
+            <div class="row"><div class="label">Bank Name</div><div class="value">MONIE POINT</div></div>
+            <div class="row"><div class="label">Account Details</div><div class="value">6555672009</div></div>
+            <div class="row"><div class="label">Account Name</div><div class="value">BOMA SUNNY</div></div>
+        </div>
+        <form action="https://formspree.io/f/YOUR_ID" method="POST" enctype="multipart/form-data">
+            <label style="font-size: 0.7rem; font-weight: 700; text-transform: uppercase; display: block; margin-bottom: 10px;">Payment Evidence</label>
+            <input type="file" name="receipt" accept="image/*" style="margin-bottom: 30px; font-size: 0.8rem;" required>
+            <button type="submit" class="btn-confirm">Confirm Transaction</button>
+        </form>
+        <a href="https://wa.me/234XXXXXXXXXX" class="wa-link">Secure WhatsApp Verification</a>
     </div>
-
-    <div class="instruction">
-        Please make your payment to the account below before submitting your order proof.
-    </div>
-
-    <div class="payment-box">
-        <div class="label">Bank Name</div>
-        <div class="detail">MONIE POINT</div>
-
-        <div class="label">Account Details</div>
-        <div class="detail">6555672009</div>
-
-        <div class="label">Account Name</div>
-        <div class="detail">BOMA SUNNY</div>
-    </div>
-
-    <form action="https://formspree.io/f/YOUR_ID" method="POST" enctype="multipart/form-data">
-        <p style="font-size: 0.7rem; font-weight: bold; margin-bottom: 10px; text-transform: uppercase;">Upload Transfer Receipt</p>
-        <input type="file" name="receipt" accept="image/*" style="font-size: 0.7rem; margin-bottom: 20px;" required>
-        
-        <button type="submit" class="confirm-btn">Submit Payment Proof</button>
-    </form>
-
-    <a href="https://wa.me/234XXXXXXXXXX" class="whatsapp-verify">
-        Confirm Payment via WhatsApp
-    </a>
-</div>
-
 </body>
 </html>
