@@ -114,4 +114,24 @@
 </footer>
 
 </body>
+<div id="loginSuccess" style="display: none; position: fixed; top: 20px; left: 50%; transform: translateX(-50%); background: var(--dark); color: white; padding: 15px 40px; border: 1px solid var(--accent); font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; z-index: 1000; box-shadow: 0 10px 30px rgba(0,0,0,0.2);">
+    Access Granted. Welcome to the Zone.
+</div>
+
+<script>
+    // Show success message if coming from login or register
+    window.onload = function() {
+        const referrer = document.referrer;
+        if (referrer.includes('login.html') || referrer.includes('register.html') || referrer.includes('forgot-password.html')) {
+            const toast = document.getElementById('loginSuccess');
+            toast.style.display = 'block';
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transition = 'opacity 1s ease';
+                setTimeout(() => toast.style.display = 'none', 1000);
+            }, 3000);
+        }
+    }
+</script>
+    
 </html>
