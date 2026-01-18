@@ -3,45 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect Zone | Secure Access</title>
+    <title>Connect Zone | Member Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
-        :root { --primary: #c5a059; --dark: #121212; --bg: #f8f9fa; }
-        body { font-family: 'Inter', sans-serif; background: var(--bg); display: flex; align-items: center; justify-content: center; height: 100vh; margin: 0; }
-        .auth-card { background: white; padding: 50px 40px; border-radius: 0px; box-shadow: 0 20px 50px rgba(0,0,0,0.05); width: 100%; max-width: 380px; text-align: center; border: 1px solid #eee; }
-        .logo { font-size: 1.8rem; font-weight: 900; color: var(--dark); text-decoration: none; letter-spacing: -1.5px; text-transform: uppercase; }
-        .logo span { color: var(--primary); }
-        .slogan { font-size: 0.6rem; color: #999; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 40px; }
-        
-        .input-group { position: relative; margin-bottom: 20px; text-align: left; }
-        .input-group label { font-size: 0.7rem; font-weight: 800; text-transform: uppercase; color: var(--dark); margin-bottom: 8px; display: block; }
-        
-        input { width: 100%; padding: 15px; border: 1.5px solid #eee; border-radius: 0px; outline: none; box-sizing: border-box; font-size: 1rem; transition: 0.3s; }
-        input:focus { border-color: var(--primary); }
-        
-        .login-btn { width: 100%; background: var(--dark); color: white; padding: 16px; border: none; font-weight: 800; cursor: pointer; text-transform: uppercase; letter-spacing: 1px; font-size: 0.8rem; transition: 0.3s; }
-        .login-btn:hover { background: var(--primary); }
-        .link { font-size: 0.75rem; color: #718096; margin-top: 25px; display: block; text-decoration: none; font-weight: 600; }
+        :root { --accent: #c5a059; --dark: #121212; --bg: #ffffff; }
+        body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; display: flex; align-items: center; justify-content: center; height: 100vh; color: var(--dark); }
+        .auth-card { width: 100%; max-width: 380px; padding: 40px; text-align: center; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 2rem; text-transform: uppercase; letter-spacing: 3px; text-decoration: none; color: var(--dark); display: block; margin-bottom: 40px; }
+        .logo span { color: var(--accent); }
+        h2 { font-family: 'Playfair Display', serif; font-size: 1.2rem; margin-bottom: 30px; letter-spacing: 1px; }
+        .input-group { margin-bottom: 20px; text-align: left; }
+        label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 1px; font-weight: 600; color: #999; display: block; margin-bottom: 5px; }
+        input { width: 100%; padding: 12px 0; border: none; border-bottom: 1px solid #eee; outline: none; font-size: 1rem; background: transparent; transition: 0.3s; }
+        input:focus { border-bottom-color: var(--accent); }
+        .forgot-link { display: block; text-align: right; font-size: 0.7rem; color: #aaa; text-decoration: none; margin-top: 10px; transition: 0.3s; }
+        .forgot-link:hover { color: var(--accent); }
+        .btn-auth { width: 100%; background: var(--dark); color: white; padding: 18px; border: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; margin-top: 30px; font-size: 0.75rem; transition: 0.3s; }
+        .btn-auth:hover { background: var(--accent); }
+        .switch-page { margin-top: 25px; font-size: 0.8rem; color: #888; }
+        .switch-page a { color: var(--accent); text-decoration: none; font-weight: 600; }
     </style>
 </head>
 <body>
     <div class="auth-card">
-        <a href="index.html" class="logo">CONNECT<span>ZONE</span></a>
-        <div class="slogan">One zone. Endless connections</div>
-        
-        <form onsubmit="window.location.href='verify.html'; return false;">
-            <div class="input-group">
+        <a href="#" class="logo">CONNECT<span>ZONE</span></a>
+        <h2>Member Login</h2>
+        <form action="index.html"> <div class="input-group">
                 <label>Phone Number</label>
-                <input type="tel" placeholder="+234 ..." required>
+                <input type="tel" placeholder="+234..." required>
             </div>
             <div class="input-group">
                 <label>Password</label>
                 <input type="password" placeholder="••••••••" required>
+                <a href="forgot-password.html" class="forgot-link">Forgot Password?</a>
             </div>
-            <button type="submit" class="login-btn">Secure Access</button>
+            <button type="submit" class="btn-auth">Access Collection</button>
         </form>
-        
-        <a href="signup.html" class="link">Request an Account</a>
-        <a href="index.html" class="link" style="opacity: 0.5; margin-top: 10px;">Return to Gallery</a>
+        <div class="switch-page">
+            New to the zone? <a href="register.html">Join Now</a>
+        </div>
     </div>
 </body>
 </html>
