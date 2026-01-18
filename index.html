@@ -3,91 +3,114 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Connect Zone | Curated Premium Design</title>
+    <title>Connect Zone | The Living Collection</title>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --accent: #c5a059; --dark: #121212; --light: #fcfcfc; }
         body { font-family: 'Inter', sans-serif; background: var(--light); margin: 0; color: var(--dark); }
         
-        /* Navigation */
-        nav { padding: 30px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #eee; background: white; position: sticky; top: 0; z-index: 100; }
-        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; color: var(--dark); }
+        /* Premium Navigation */
+        nav { padding: 25px 5%; display: flex; justify-content: space-between; align-items: center; background: white; border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 100; }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; color: var(--dark); }
         .logo span { color: var(--accent); }
-        
-        /* Hero Section */
-        .hero { text-align: center; padding: 60px 20px; border-bottom: 1px solid #eee; }
-        .hero h1 { font-family: 'Playfair Display', serif; font-size: 2.5rem; margin-bottom: 10px; }
-        .hero p { color: #888; letter-spacing: 3px; text-transform: uppercase; font-size: 0.7rem; }
 
-        /* Product Grid */
-        .collection-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 40px; padding: 60px 10%; }
-        .product-card { background: white; transition: 0.4s ease; position: relative; }
-        .product-card:hover { transform: translateY(-10px); }
-        .img-holder { width: 100%; aspect-ratio: 1/1; background: #f0f0f0; overflow: hidden; }
-        .img-holder img { width: 100%; height: 100%; object-fit: cover; }
-        
-        .product-info { padding: 20px 0; text-align: center; }
-        .product-info h3 { font-family: 'Playfair Display', serif; margin: 0 0 10px 0; font-size: 1.2rem; }
-        .price { color: var(--accent); font-weight: 600; font-size: 1rem; margin-bottom: 20px; display: block; }
-        
-        .order-btn { display: inline-block; padding: 12px 30px; background: var(--dark); color: white; text-decoration: none; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; }
-        .order-btn:hover { background: var(--accent); }
+        .category-bar { display: flex; justify-content: center; gap: 30px; padding: 20px; background: white; border-bottom: 1px solid #eee; font-size: 0.7rem; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: #999; }
+        .active { color: var(--dark); border-bottom: 2px solid var(--accent); padding-bottom: 5px; }
 
-        footer { text-align: center; padding: 40px; border-top: 1px solid #eee; font-size: 0.7rem; color: #aaa; letter-spacing: 1px; }
+        /* Hero Header */
+        .hero { text-align: center; padding: 80px 20px; background: #fff; }
+        .hero h1 { font-family: 'Playfair Display', serif; font-size: 3rem; margin: 0; font-weight: 700; }
+        .hero p { color: #aaa; letter-spacing: 5px; text-transform: uppercase; font-size: 0.7rem; margin-top: 10px; }
+
+        /* Professional Product Grid */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 50px; padding: 60px 10%; }
+        .item { background: white; transition: 0.4s ease; border: 1px solid #f9f9f9; }
+        .item:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(0,0,0,0.05); }
+        
+        .item-img { width: 100%; aspect-ratio: 1/1; background: #f7f7f7; overflow: hidden; }
+        .item-img img { width: 100%; height: 100%; object-fit: cover; transition: 0.6s; }
+        .item:hover .item-img img { transform: scale(1.05); }
+        
+        .item-info { padding: 30px; text-align: center; }
+        .item-info h3 { font-family: 'Playfair Display', serif; margin: 0 0 10px 0; font-size: 1.3rem; letter-spacing: 1px; }
+        .price { color: var(--accent); font-weight: 600; display: block; margin-bottom: 25px; font-size: 1.1rem; }
+        
+        .btn-order { display: inline-block; width: 80%; padding: 18px; background: var(--dark); color: white; text-decoration: none; font-size: 0.7rem; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: 0.3s; border: 1px solid var(--dark); }
+        .btn-order:hover { background: transparent; color: var(--dark); }
+
+        /* Professional Footer */
+        footer { background: #fff; padding: 60px 20px; text-align: center; border-top: 1px solid #eee; margin-top: 80px; }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.2rem; letter-spacing: 2px; color: #ccc; text-transform: uppercase; margin-bottom: 20px; }
     </style>
 </head>
 <body>
 
 <nav>
-    <a href="#" class="logo">CONNECT<span>ZONE</span></a>
-    <div style="font-size: 0.8rem; font-weight: 600; letter-spacing: 1px;">COLLECTIONS</div>
+    <a href="index.html" class="logo">CONNECT<span>ZONE</span></a>
+    <div style="font-size: 0.7rem; letter-spacing: 1px; font-weight: 600;">ACCOUNT</div>
 </nav>
 
-<div class="hero">
-    <p>Premium Accessories</p>
-    <h1>The Living Collection</h1>
+<div class="category-bar">
+    <div class="active">All Collections</div>
+    <div>Living</div>
+    <div>Bedroom</div>
+    <div>Office</div>
 </div>
 
-<div class="collection-grid">
-    <div class="product-card">
-        <div class="img-holder"><img src="https://images.unsplash.com/photo-1583847268964-b28dc2f51ac9?auto=format&fit=crop&q=80&w=500" alt="Sofa"></div>
-        <div class="product-info">
+<div class="hero">
+    <h1>The Living Collection</h1>
+    <p>Curated Luxury for Modern Living</p>
+</div>
+
+<div class="grid">
+    <div class="item">
+        <div class="item-img">
+            <img src="https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&w=800" alt="Emerald Velvet Sofa">
+        </div>
+        <div class="item-info">
             <h3>Emerald Velvet Sofa</h3>
             <span class="price">₦1,350,000</span>
-            <a href="checkout.html" class="order-btn">Initiate Order</a>
+            <a href="checkout.html" class="btn-order">Initiate Order</a>
         </div>
     </div>
 
-    <div class="product-card">
-        <div class="img-holder"><img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&q=80&w=500" alt="Chair"></div>
-        <div class="product-info">
+    <div class="item">
+        <div class="item-img">
+            <img src="https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&w=800" alt="Nordic Chair">
+        </div>
+        <div class="item-info">
             <h3>Minimalist Nordic Chair</h3>
             <span class="price">₦210,000</span>
-            <a href="checkout.html" class="order-btn">Initiate Order</a>
+            <a href="checkout.html" class="btn-order">Initiate Order</a>
         </div>
     </div>
 
-    <div class="product-card">
-        <div class="img-holder"><img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=500" alt="Table"></div>
-        <div class="product-info">
+    <div class="item">
+        <div class="item-img">
+            <img src="https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&w=800" alt="Marble Table">
+        </div>
+        <div class="item-info">
             <h3>Marble Coffee Table</h3>
             <span class="price">₦450,000</span>
-            <a href="checkout.html" class="order-btn">Initiate Order</a>
+            <a href="checkout.html" class="btn-order">Initiate Order</a>
         </div>
     </div>
 
-    <div class="product-card">
-        <div class="img-holder"><img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&q=80&w=500" alt="Lamp"></div>
-        <div class="product-info">
+    <div class="item">
+        <div class="item-img">
+            <img src="https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&w=800" alt="Floor Lamp">
+        </div>
+        <div class="item-info">
             <h3>Architectural Floor Lamp</h3>
             <span class="price">₦125,000</span>
-            <a href="checkout.html" class="order-btn">Initiate Order</a>
+            <a href="checkout.html" class="btn-order">Initiate Order</a>
         </div>
     </div>
 </div>
 
 <footer>
-    &copy; CONNECT ZONE INC. | ONE ZONE. ENDLESS CONNECTIONS.
+    <div class="footer-logo">CONNECT ZONE</div>
+    <p style="font-size: 0.6rem; color: #bbb; letter-spacing: 2px;">&copy; 2026 | ONE ZONE. ENDLESS CONNECTIONS.</p>
 </footer>
 
 </body>
